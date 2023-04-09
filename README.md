@@ -50,34 +50,6 @@ $ docker run -d \
 > Замените IP адрес в строчке `WG_HOST` на ваш IP адрес или домен <br>
 > Рекомендуется заменить пароль в строчке `PASSWORD` для безопасности вашего сервера
 
-## Дополнение
-Для шифрования трафика вы можете 
-использовать протокол DNSCrypt.
-
-### 1. Установка
-```bash
-sudo add-apt-repository ppa:shevchuk/dnscrypt-proxy
-sudo apt update
-sudo apt install dnscrypt-proxy
-```
-
-### 2. Настройка конфига
-
-По данному адресу переходим в редактор:
-```bash
-sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-```
-
-Изменяем данные параметры на свои:
-> Укажите локальный IP адрес в строчке `listen_addresses` <br>
-> В строчке `server_names` укажатие DNSCrypt сервер
-
-После перезагружаем сервисы данными командами:
-```bash
-sudo systemctl restart NetworkManager
-sudo systemctl restart dnscrypt-proxy
-```
-
 #### Для дополнительной безопасности можете использовать данный код для блокировки тунеля
 ```bash
 iptables -A INPUT --proto icmp -j DROP
