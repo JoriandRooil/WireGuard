@@ -1,4 +1,4 @@
-# SnakeGuard
+# WireGuard
 Вы нашли самый простой способ установить <br>
 WireGuard и управлять им на любом хосте Linux.
 
